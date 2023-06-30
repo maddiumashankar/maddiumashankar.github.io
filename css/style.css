@@ -25,7 +25,7 @@ body{
 }
 
 html::-webkit-scrollbar{
-	width: 0.5rem;
+	width: 0.2rem;
 	background: transparent;
 }
 html::-webkit-scrollbar-thumb{
@@ -460,15 +460,12 @@ header{
 
 
 
-/*--------------------------------------------------------------
-# Skills
---------------------------------------------------------------*/
 .skills {
   width: 100%;
 }
 
 .progress {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .skill {
@@ -485,19 +482,32 @@ header{
 .progress-bar {
   background-color: #2196f3;
   height: 8px;
-  width: 0; /* Set initial width to 0% */
-  animation-fill-mode: forwards; /* Maintain the final state after animation */
+  width: 0;
+  animation-fill-mode: forwards;
 }
 
 @keyframes progress-animation {
   0% {
     width: 0;
   }
-  100% {
-    width:80%;
-  }
 }
 
+.progress-bar[data-aos="fade-right"] {
+  animation: progress-animation 1s ease-in-out;
+  animation-delay: 0.2s;
+}
+
+.progress-bar[data-aos="fade-right"][data-aos-duration="550"] {
+  animation-delay: 0.4s;
+}
+
+.progress-bar[data-aos="fade-right"][data-aos-duration="400"] {
+  animation-delay: 0.6s;
+}
+
+
+
+/*--------------------*/
 /* Additional styles for individual progress bars */
 
 .progress:nth-child(1) .progress-bar {
@@ -577,6 +587,7 @@ header{
 	bottom: 2rem;
 	transition: 0.2s;
 }
+
 
 
 /*Resoponisveness for the website*/
@@ -661,7 +672,7 @@ header{
   }
 }
 
-/* Add media query for screens smaller than 480px */
+/*Add media query for screens smaller than 480px */
 @media(max-width:990px){
 
 	.container{
@@ -684,131 +695,6 @@ header{
 		height: 257px;
 	}
 }
-
-@media(max-width:775px){
-	.nav{
-		padding: 10px 0;
-	}
-	.logo{
-		font-size: 1.1rem;
-	}
-	.home{
-		min-height: 500px;
-		padding-top: 6rem;
-	}
-	.home-text h3{
-		font-size: 1rem;
-	}
-	.home-text h2{
-		font-size: 3rem;
-		line-height: 3.8rem;
-	}
-	.home-text p{
-		font-size: 0.825rem;
-	}
-	.project-box{
-		height: 245px;
-	}
-}
-
-@media (max-width: 479px) {
-  .nav-link {
-    font-size: 0.8rem;
-  }
-
-  .home-text h2 {
-    font-size: 2rem;
-    line-height: 3rem;
-  }
-
-  .about-data span {
-    font-size: 0.9rem;
-  }
-
-  .about-data h2 {
-    font-size: 1.8rem;
-    line-height: 2.4rem;
-  }
-
-  .icon-box {
-    font-size: 0.7rem;
-    padding: 10px;
-  }
-
-  .project-overlay h2 {
-    font-size: 1.4rem;
-  }
-
-  .progress-bar {
-    height: 6px;
-  }
-
-  .footer p {
-    font-size: 0.8rem;
-  }
-
-  .footer-links a {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width:635px){
-	.about-content{
-		grid-template-columns: 1fr;
-	}
-	.about-data span{
-		font-size: 0.9rem;
-	}
-	.about-data h2{
-		font-size: 1.7rem;
-		line-height: 2.3rem;
-		font-weight: 600;
-		margin: 0.8rem 0;
-	}
-	.about-text p{
-		font-size: 0.825rem;
-		margin-bottom: 1.3rem;
-	}	
-}
-
-@media(max-width:450px){
-	.home{
-		min-height: 485px;
-		padding-top:5rem;
-	}
-	.home-img{
-		width: 140px;
-		height: 140px;
-	}
-	.home-img img{ 
-		width: 140px;
-		height: 140px;
-	}
-	.home-text h2{
-		font-size: 2.1rem;
-		line-height: 3.2rem;
-	}
-	.home-text p br{
-		display: contents;
-	}
-	.heading{
-		font-size: 3rem;
-	}
-	.about-data h2{
-		font-size: 1.5rem;
-		line-height: 2.1rem;
-		margin: 0.6rem 0;
-	}
-	.ctf-content,
-	.project-content{
-		grid-template-columns: 1fr;
-	}
-	.footer-links{
-		flex-direction: column;
-		row-gap: 1rem;
-	}
-}
-
 
 @media(max-width:375px){
 	.interestgrid{
